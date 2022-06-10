@@ -64,7 +64,7 @@ class AuthenticationController extends ApplicationController {
 
       const isPasswordCorrect = this.verifyPassword(password, user.encryptedPassword);
 
-      if (!!isPasswordCorrect) {
+      if (!isPasswordCorrect) {
         const err = new WrongPasswordError();
         res.status(401).json(err);
         return;
@@ -81,6 +81,7 @@ class AuthenticationController extends ApplicationController {
       next(err);
     }
   }
+
 
   handleRegister = async (req, res, next) => {
     try {

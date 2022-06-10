@@ -6,7 +6,7 @@ const app = require("../../app");
     return request(app)
       .get("/v1/auth/whoami")
       .set('Authorization', `Bearer ${
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsIm5hbWUiOiJ0YXN5YSIsImVtYWlsIjoidGFzeWFAYmluYXIuY28uaWQiLCJpbWFnZSI6bnVsbCwicm9sZSI6eyJpZCI6MSwibmFtZSI6IkNVU1RPTUVSIn0sImlhdCI6MTY1NDgyMjUzMn0.urPU1Ys60msjSTw3Q6catJZ7UNXhrozjlDKwJzjzf7A"}`)
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsIm5hbWUiOiJtYXlhIiwiZW1haWwiOiJtYXlhQGJpbmFyLmNvLmlkIiwiaW1hZ2UiOm51bGwsInJvbGUiOnsiaWQiOjEsIm5hbWUiOiJDVVNUT01FUiJ9LCJpYXQiOjE2NTQ4NzI3MDR9.CJ_L_-h_4LxwtLW-fmKRmSCnW7ifj6TufYkJ7eGlJUk"}`)
       .set("Content-Type", "application/json")
       .then((res) => {
         expect(res.statusCode).toBe(200);

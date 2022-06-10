@@ -3,9 +3,9 @@ const app = require("../app");
 
  describe("POST /v1/auth/register", () => {
   it("should response with 201 as status code", async () => {
-    const email = "jumadiya@binar.co.id"
-    const password="jumadi"
-    const name="jumadi31"
+    const email = "tasyadia@binar.co.id"
+    const password="admin"
+    const name="admin"
 
     return request(app)
       .post("/v1/auth/register")
