@@ -6,7 +6,7 @@ const app = require("../../app");
     return request(app)
       .get("/v1/auth/whoami")
       .set('Authorization', `Bearer ${
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsIm5hbWUiOiJtYXlhIiwiZW1haWwiOiJtYXlhQGJpbmFyLmNvLmlkIiwiaW1hZ2UiOm51bGwsInJvbGUiOnsiaWQiOjEsIm5hbWUiOiJDVVNUT01FUiJ9LCJpYXQiOjE2NTQ4NzI3MDR9.CJ_L_-h_4LxwtLW-fmKRmSCnW7ifj6TufYkJ7eGlJUk"}`)
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjIsIm5hbWUiOiJtYWdkYWxpc2EiLCJlbWFpbCI6Im1hZ2RhbGlzYUBiaW5hci5jby5pZCIsImltYWdlIjpudWxsLCJyb2xlIjp7ImlkIjoxLCJuYW1lIjoiQ1VTVE9NRVIifSwiaWF0IjoxNjU0ODg2MjE5fQ.Pk_R5-6_WVSePymJuJFTVikH08Dxv3HEroRkcXSnffw"}`)
       .set("Content-Type", "application/json")
       .then((res) => {
         expect(res.statusCode).toBe(200);
@@ -21,31 +21,31 @@ const app = require("../../app");
       
   }
   
-  );
+  ,3000000);
 
   
 
-  it("should response with 401 as status code", async () => {
-    return request(app)
-      .get("/v1/auth/whoami")
-      .set('Authorization', `Bearer ${
-        "eyJhbGciOiJIUzI1NiIsInR5CI6IkpXVCJ9.eyJpZCI6MTEsIm5hbWUiOiJhZG1pbiIsImVtYWlsIjoibWF5YW1heWFAYmluYXIuY28uaWQiLCJpbWFnZSI6bnVsbCwicm9sZSI6eyJpZCI6MiwibmFtZSI6IkFETUlOIn0sImlhdCI6MTY1NDc2OTYyNX0.fdj6bOXNRVCKrypHrCbYNn6qoKFPUERqs14ysh9Vbbk"}`)
-      .set("Content-Type", "application/json")
-      .then((res) => {
-        expect(res.statusCode).toBe(401);
-        expect(res.body).toEqual(
-          expect.objectContaining({
-            ...res.body,
-          })
-        );
-      });
-  });
+  // it("should response with 401 as status code", async () => {
+  //   return request(app)
+  //     .get("/v1/auth/whoami")
+  //     .set('Authorization', `Bearer ${
+  //       ""}`)
+  //     .set("Content-Type", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsIm5hbWUiOm51bGwsImVtYWlsIjoiaml5YUBiaW5hci5jby5pZCIsImltYWdlIjpudWxsLCJyb2xlIjp7ImlkIjoyLCJuYW1lIjoiQURNSU4ifSwiaWF0IjoxNjU0ODc3OTMwfQ.sc6rP49q2ObNxh8Jz0mc2zAOtLyStqNH4Uwj77APDLM")
+  //     .then((res) => {
+  //       expect(res.statusCode).toBe(401);
+  //       expect(res.body).toEqual(
+  //         expect.objectContaining({
+  //           ...res.body,
+  //         })
+  //       );
+  //     });
+  // },300000);
 
   it("should response with 401 as status code", async () => {
     return request(app)
       .get("/v1/auth/whoami")
       .set('Authorization', `Bearer ${
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsIm5hbWUiOiJhZG1pbiIsImVtYWlsIjoibWF5YW1heWFAYmluYXIuY28uaWQiLCJpbWFnZSI6bnVsbCwicm9sZSI6eyJpZCI6MiwibmFtZSI6IkFETUlOIn0sImlhdCI6MTY1NDc2OTYyNX0.fdj6bOXNRVCKrypHrCbYNn6qoKFPUERqs14ysh9Vbbk"}`)
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsIm5hbWUiOm51bGwsImVtYWlsIjoiaml5YUBiaW5hci5jby5pZCIsImltYWdlIjpudWxsLCJyb2xlIjp7ImlkIjoyLCJuYW1lIjoiQURNSU4ifSwiaWF0IjoxNjU0ODc3OTMwfQ.sc6rP49q2ObNxh8Jz0mc2zAOtLyStqNH4Uwj77APDLM"}`)
       .set("Content-Type", "application/json")
       .then((res) => {
         expect(res.statusCode).toBe(401);
@@ -56,4 +56,4 @@ const app = require("../../app");
         );
       });
   });
-});
+},3000000);

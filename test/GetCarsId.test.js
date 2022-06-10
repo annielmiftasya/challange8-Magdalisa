@@ -5,23 +5,16 @@ const { Car } = require("../app/models");
 describe("GET /v1/cars/:id", () => {
   it("should response with 200 as status code", async () => {
     return request(app)
-      .get("/v1/cars/2")
+      .get("/v1/cars/10")
       .then((res) => {
         expect(res.statusCode).toBe(200);
         expect(res.body).toEqual(
           expect.objectContaining({
-            id: 2,
-            name: "Mazda RX4 Wag",
-            price: 300000,
-            size: "SMALL",
-            image: "https://source.unsplash.com/501x501",
-            isCurrentlyRented: false,
-            createdAt: "2022-06-08T10:29:45.083Z",
-            updatedAt: "2022-06-08T10:29:45.083Z"
+            ...res.body,
           })
         );
       });
-  });
+  },300000);
 
   it("should response with 404 as status code", async () => {
     return request(app)
@@ -35,4 +28,4 @@ describe("GET /v1/cars/:id", () => {
         );
       });
   });
-});
+},300000);

@@ -27,8 +27,7 @@ class CarController extends ApplicationController {
   }
 
   handleGetCar = async (req, res) => {
-    const car = await this.getCarFromRequest(req); 
-
+    const car = await this.carModel.findByPk(req.params.id); 
     res.status(200).json(car);
   }
 

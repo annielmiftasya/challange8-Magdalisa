@@ -15,7 +15,7 @@ describe("PUT /v1/cars/:id", () => {
     return request(app)
       .put("/v1/cars/3")
       .set('Authorization', `Bearer ${
-         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsIm5hbWUiOiJhZG1pbiIsImVtYWlsIjoibWF5YW1heWFAYmluYXIuY28uaWQiLCJpbWFnZSI6bnVsbCwicm9sZSI6eyJpZCI6MiwibmFtZSI6IkFETUlOIn0sImlhdCI6MTY1NDc2OTYyNX0.fdj6bOXNRVCKrypHrCbYNn6qoKFPUERqs14ysh9Vbbk"}`)
+         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsIm5hbWUiOm51bGwsImVtYWlsIjoiaml5YUBiaW5hci5jby5pZCIsImltYWdlIjpudWxsLCJyb2xlIjp7ImlkIjoyLCJuYW1lIjoiQURNSU4ifSwiaWF0IjoxNjU0ODc3OTMwfQ.sc6rP49q2ObNxh8Jz0mc2zAOtLyStqNH4Uwj77APDLM"}`)
       .set("Content-Type", "application/json")
       .send({name,price,size,image})
       .then((res) => {
@@ -26,7 +26,7 @@ describe("PUT /v1/cars/:id", () => {
           })
         );
       });
-  });
+  },100000);
 
   it("should response with 404 as status code", async () => {
    const name ="Hornet 4 Drive"
@@ -38,7 +38,7 @@ describe("PUT /v1/cars/:id", () => {
     return request(app)
       .put("/v1/cars/-100")
       .set('Authorization', `Bearer ${
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsIm5hbWUiOiJhZG1pbiIsImVtYWlsIjoibWF5YW1heWFAYmluYXIuY28uaWQiLCJpbWFnZSI6bnVsbCwicm9sZSI6eyJpZCI6MiwibmFtZSI6IkFETUlOIn0sImlhdCI6MTY1NDc2OTYyNX0.fdj6bOXNRVCKrypHrCbYNn6qoKFPUERqs14ysh9Vbbk"}`)
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsIm5hbWUiOm51bGwsImVtYWlsIjoiaml5YUBiaW5hci5jby5pZCIsImltYWdlIjpudWxsLCJyb2xlIjp7ImlkIjoyLCJuYW1lIjoiQURNSU4ifSwiaWF0IjoxNjU0ODc3OTMwfQ.sc6rP49q2ObNxh8Jz0mc2zAOtLyStqNH4Uwj77APDLM"}`)
       .set("Content-Type", "application/json")
       .send({ name,price,size,image,isCurrentlyRented })
       .then((res) => {
@@ -51,4 +51,4 @@ describe("PUT /v1/cars/:id", () => {
       });
   });
 
-});
+},100000);

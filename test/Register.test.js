@@ -3,9 +3,9 @@ const app = require("../app");
 
  describe("POST /v1/auth/register", () => {
   it("should response with 201 as status code", async () => {
-    const email = "tasyadia@binar.co.id"
-    const password="admin"
-    const name="admin"
+    const email = "kpayana@binar.co.id"
+    const password="payana"
+    const name="payana"
 
     return request(app)
       .post("/v1/auth/register")
@@ -24,7 +24,7 @@ const app = require("../app");
       
   }
   
-  );
+  ,300000);
 
   
 
@@ -46,4 +46,4 @@ const app = require("../app");
         );
       });
   });
-});
+},300000);

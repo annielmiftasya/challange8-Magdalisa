@@ -3,15 +3,15 @@ const app = require("../../app");
 
  describe("POST /v1/cars", () => {
   it("should response with 201 as status code", async () => {
-    const name = "Avanza"
+    const name = "Apv"
     const price=30000
-    const size ="medium"
+    const size ="large"
     const image ="dummy"
 
     return request(app)
       .post("/v1/cars")
       .set('Authorization', `Bearer ${
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsIm5hbWUiOiJhZG1pbiIsImVtYWlsIjoibWF5YW1heWFAYmluYXIuY28uaWQiLCJpbWFnZSI6bnVsbCwicm9sZSI6eyJpZCI6MiwibmFtZSI6IkFETUlOIn0sImlhdCI6MTY1NDc2OTYyNX0.fdj6bOXNRVCKrypHrCbYNn6qoKFPUERqs14ysh9Vbbk"}`)
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsIm5hbWUiOm51bGwsImVtYWlsIjoiaml5YUBiaW5hci5jby5pZCIsImltYWdlIjpudWxsLCJyb2xlIjp7ImlkIjoyLCJuYW1lIjoiQURNSU4ifSwiaWF0IjoxNjU0ODgwMDUxfQ.LgwLvvf--9sMr1eI_fv5SfLMgb8VThxdp4bwiqFc7IU"}`)
       .set("Content-Type", "application/json")
       .send({ name, price, size, image })
       .then((res) => {
@@ -28,7 +28,7 @@ const app = require("../../app");
       
   }
   
-  );
+  ,100000);
 
   
 
@@ -39,7 +39,7 @@ const app = require("../../app");
     return request(app)
       .post("/v1/cars")
       .set('Authorization', `Bearer ${
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsIm5hbWUiOiJhZG1pbiIsImVtYWlsIjoibWF5YW1heWFAYmluYXIuY28uaWQiLCJpbWFnZSI6bnVsbCwicm9sZSI6eyJpZCI6MiwibmFtZSI6IkFETUlOIn0sImlhdCI6MTY1NDc2OTYyNX0.fdj6bOXNRVCKrypHrCbYNn6qoKFPUERqs14ysh9Vbbk"}`)
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsIm5hbWUiOm51bGwsImVtYWlsIjoiaml5YUBiaW5hci5jby5pZCIsImltYWdlIjpudWxsLCJyb2xlIjp7ImlkIjoyLCJuYW1lIjoiQURNSU4ifSwiaWF0IjoxNjU0ODc3OTMwfQ.sc6rP49q2ObNxh8Jz0mc2zAOtLyStqNH4Uwj77APDLM"}`)
       .set("Content-Type", "application/json")
       .send({ name, prompt })
       .then((res) => {
@@ -54,4 +54,4 @@ const app = require("../../app");
         );
       });
   });
-});
+},100000);

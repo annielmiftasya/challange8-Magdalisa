@@ -19,7 +19,7 @@ const app = require("../app");
       
   }
   
-  );
+  ,300000);
 
   
 

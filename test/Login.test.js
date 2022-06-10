@@ -3,8 +3,8 @@ const app = require("../app");
 
  describe("POST /v1/auth/login", () => {
   it("should response with 201 as status code", async () => {
-    const email = "tasya@binar.co.id"
-    const password="tasya"
+    const email = "jiya@binar.co.id"
+    const password="jiya"
 
     return request(app)
       .post("/v1/auth/login")
@@ -23,13 +23,13 @@ const app = require("../app");
       
   }
   
-  );
+  ,300000);
 
   
 
   it("should response with 401 as status code", async () => {
    const email = "tasya@binar.co.id"
-   const password="123456"
+   const password="tasya"
 
     return request(app)
       .post("/v1/auth/login")
@@ -46,8 +46,8 @@ const app = require("../app");
   });
 
   it("should response with 404 as status code", async () => {
-   const email = "magdalisa@binar.co.id"
-   const password="tasya"
+   const email = "mia2312@binar.co.id"
+   const password="hai"
 
     return request(app)
       .post("/v1/auth/login")
@@ -77,4 +77,4 @@ const app = require("../app");
         );
       });
   });
-});
+},300000);

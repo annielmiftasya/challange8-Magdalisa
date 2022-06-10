@@ -1,14 +1,14 @@
 const request = require("supertest");
 const app = require("../../app");
 
- describe("POST /v1/cars", () => {
+ describe("POST /v1/cars/:id/rent", () => {
   it("should response with 201 as status code", async () => {
-    const rentStartedAt="2022-12-27"
-    const rentEndedAt="2022-12-27"
+    const rentStartedAt="2022-03-07"
+    const rentEndedAt="2022-03-07"
     return request(app)
-      .post("/v1/cars/1/rent")
+      .post("/v1/cars/8/rent")
       .set('Authorization', `Bearer ${
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsIm5hbWUiOiJtYXlhIiwiZW1haWwiOiJtYXlhQGJpbmFyLmNvLmlkIiwiaW1hZ2UiOm51bGwsInJvbGUiOnsiaWQiOjEsIm5hbWUiOiJDVVNUT01FUiJ9LCJpYXQiOjE2NTQ4NzI3MDR9.CJ_L_-h_4LxwtLW-fmKRmSCnW7ifj6TufYkJ7eGlJUk"}`)
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwibmFtZSI6InRhc3lhIiwiZW1haWwiOiJ0YXN5YUBiaW5hci5jby5pZCIsImltYWdlIjpudWxsLCJyb2xlIjp7ImlkIjoxLCJuYW1lIjoiQ1VTVE9NRVIifSwiaWF0IjoxNjU0ODc3NjM1fQ.fF1FnkFbdRtaKSAVtNreYQ0AGOkYEvv94IrkXvO3S4w"}`)
       .set("Content-Type", "application/json")
       .send({rentStartedAt,rentEndedAt})
       .then((res) => {
@@ -24,14 +24,14 @@ const app = require("../../app");
       
   }
   
-  );
+  ,300000);
 
    it("should response with 500 as status code", async () => {
      const rentStartedAt="2022-08-08"
      return request(app)
        .post("/v1/cars/-9/rent")
        .set('Authorization', `Bearer ${
-         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsIm5hbWUiOiJ0YXN5YSIsImVtYWlsIjoidGFzeWFAYmluYXIuY28uaWQiLCJpbWFnZSI6bnVsbCwicm9sZSI6eyJpZCI6MSwibmFtZSI6IkNVU1RPTUVSIn0sImlhdCI6MTY1NDgyMjUzMn0.urPU1Ys60msjSTw3Q6catJZ7UNXhrozjlDKwJzjzf7A"}`)
+         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjIsIm5hbWUiOiJtYWdkYWxpc2EiLCJlbWFpbCI6Im1hZ2RhbGlzYUBiaW5hci5jby5pZCIsImltYWdlIjpudWxsLCJyb2xlIjp7ImlkIjoxLCJuYW1lIjoiQ1VTVE9NRVIifSwiaWF0IjoxNjU0ODg2MjE5fQ.Pk_R5-6_WVSePymJuJFTVikH08Dxv3HEroRkcXSnffw"}`)
        .set("Content-Type", "application/json")
        .send({rentStartedAt})
        .then((res) => {
@@ -43,7 +43,7 @@ const app = require("../../app");
          );
          
  
-       });
+       },300000);
        
    }
    
@@ -54,7 +54,7 @@ const app = require("../../app");
       return request(app)
         .post("/v1/cars/4/rent")
         .set('Authorization', `Bearer ${
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsIm5hbWUiOiJ0YXN5YSIsImVtYWlsIjoidGFzeWFAYmluYXIuY28uaWQiLCJpbWFnZSI6bnVsbCwicm9sZSI6eyJpZCI6MSwibmFtZSI6IkNVU1RPTUVSIn0sImlhdCI6MTY1NDgyMjUzMn0.urPU1Ys60msjSTw3Q6catJZ7UNXhrozjlDKwJzjzf7A"}`)
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjIsIm5hbWUiOiJtYWdkYWxpc2EiLCJlbWFpbCI6Im1hZ2RhbGlzYUBiaW5hci5jby5pZCIsImltYWdlIjpudWxsLCJyb2xlIjp7ImlkIjoxLCJuYW1lIjoiQ1VTVE9NRVIifSwiaWF0IjoxNjU0ODg2MjE5fQ.Pk_R5-6_WVSePymJuJFTVikH08Dxv3HEroRkcXSnffw"}`)
         .set("Content-Type", "application/json")
         .send({rentStartedAt,rentEndedAt})
         .then((res) => {
@@ -71,5 +71,5 @@ const app = require("../../app");
     }
     
     );
-   });
+   },300000);
 
